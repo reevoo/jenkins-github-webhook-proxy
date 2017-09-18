@@ -1,0 +1,22 @@
+name: jenkins-github-webhook-proxy
+image:
+  repository: quay.io/reevoo/jenkins-github-webhook-proxy
+
+env:
+  JENKINS_URL: {}
+
+components:
+  proxy:
+    kind: Deployment
+    replicas: 2
+    service:
+      ports:
+        - port: 80
+          targetPort: 80
+          protocol: TCP
+          name: http
+  ingress:
+    kind: Ingress
+    service: proxy
+    port: http
+    access: external
