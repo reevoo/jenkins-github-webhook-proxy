@@ -1,4 +1,4 @@
-FROM nginx:alpine
+FROM nginx:alpine AS prod
 
 ADD default.template .
 ADD entrypoint.sh .
