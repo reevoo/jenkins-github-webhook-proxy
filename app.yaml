@@ -22,5 +22,7 @@ components:
     access: external
 
 pipeline:
+  build:
+    targets: ["prod"]
   deploy:
     master: production
