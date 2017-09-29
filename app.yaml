@@ -25,4 +25,5 @@ pipeline:
   build:
     targets: ["prod"]
   deploy:
-    master: production
+    auto:
+      master: production
