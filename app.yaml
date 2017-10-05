@@ -26,4 +26,5 @@ pipeline:
     targets: ["prod"]
   deploy:
     auto:
-      master: production
+      master:
+      - production
